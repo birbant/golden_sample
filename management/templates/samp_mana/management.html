@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+<!DOCTYPE html>
+<html lang="en">
+    {%  block content %}
+    <h3> Operation </h3>
+    <hr>
+    {% for manage in page_obj %}
+        <br>
+        <b>Sample Id:</b> {{ manage.sample_id }}
+        <br>
+        <b>Employee Id:</b> {{ manage.employee_id }}
+        <br>
+        <b>Operation type:</b> {{ manage.operation_type }}
+        <br>
+        <b>Collection date:</b> {{ manage.operation_date }}
+        <br>
+        <b>Production order:</b> {{ manage.production_order }}
+        <br>
+        <b>Storage place:</b> {{ manage.storage_place }}
+        <br>
+        <hr>
+    {% endfor %}
+        <br>
+    <div class="pagination">
+        <span class="step-links">
+            {% if page_obj.has_previous %}
+                <a href="?page=1">&laquo; first</a>
+                <a href="?page={{ page_obj.previous_page_number }}" class="pagination-link"> &lsaquo; previous </a>
+            {% endif %}
+
+            <span class="current-page">
+                Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}.
+            </span>
+
+            {% if page_obj.has_next %}
+                <a href="?page={{ page_obj.next_page_number }}" class="pagination-link"> next &rsaquo; </a>
+                <a href="?page={{ page_obj.paginator.num_pages }}">last &raquo;</a>
+            {% endif %}
+        </span>
+    </div>
+</html>
+{% endblock %}

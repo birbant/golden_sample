@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <h1> Update sample here: </h1>
+</head>
+<body>
+    <hr>
+    <br>
+
+    <form method="post" autocomplete="off">
+
+        {% csrf_token %}
+
+        {{ SampleUpdate.as_p }}
+
+        <input type="submit" value="Update sample"/>
+    </form>
+{#            {%  for message in messages %}#}
+{#            <hi>{{ message }}</hi>#}
+{#            {% endfor %}#}
+</body>
+</html>
+{% endblock %}

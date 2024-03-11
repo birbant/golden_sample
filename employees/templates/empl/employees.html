@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<header>
+    <h3><b> Employees </b></h3>
+    <h5> All employees: {{ AllEmployees.count }} </h5>
+
+</header>
+    <hr>
+    {% for employee in page_obj %}
+        <br>
+        <b>First name:</b> {{ employee.first_name }}
+        <br>
+        <b>Second name:</b> {{ employee.last_name }}
+        <br>
+        <b>Employee ID:</b> {{ employee.employee_id }}
+        <br>
+        <b>Department:</b> {{ employee.department }}
+        <br>
+        <a href="{% url 'employee-update' employee.employee_id %}"> Update employee details </a>
+        &nbsp;
+        <a href="{% url 'employee-delete' employee.employee_id %}"> Delete employee from database </a>
+        <hr>
+    {% endfor %}
+        <br>
+    <div class="pagination">
+        <span class="step-links">
+            {% if page_obj.has_previous %}
+                <a href="?page=1">&laquo; first</a>
+                <a href="?page={{ page_obj.previous_page_number }}" class="pagination-link"> &lsaquo; previous </a>
+            {% endif %}
+
+            <span class="current-page">
+                Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}.
+            </span>
+
+            {% if page_obj.has_next %}
+                <a href="?page={{ page_obj.next_page_number }}" class="pagination-link"> next &rsaquo; </a>
+                <a href="?page={{ page_obj.paginator.num_pages }}">last &raquo;</a>
+            {% endif %}
+        </span>
+    </div>
+</html>
+{% endblock %}

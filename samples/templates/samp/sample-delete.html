@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <h1> Delete sample here </h1>
+</head>
+    <hr>
+    <br>
+    <form method="post" autocomplete="off">
+
+        {% csrf_token %}
+        <p> Are you s u r e you want to delete sample number <b>{{ part_number }}</b> for part <b>{{ part_name }}</b> from database? </p>
+
+        <br> <br>
+
+        <input type="submit" value="Delete sample"/>
+    </form>
+
+</html>
+{%  endblock %}

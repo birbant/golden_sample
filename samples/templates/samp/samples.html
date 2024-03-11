@@ -1,0 +1,59 @@
+{% extends 'base.html'  %}
+{%  block content %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <h3><b> Samples </b></h3>
+    <h5> All samples: {{ AllSamples.count }} </h5>
+    <h5> Approved samples: {{ approved }} </h5>
+    <h5> Not approved samples: {{ not_approved }} </h5>
+</head>
+<hr>
+    {% for sample in page_obj %}
+        <br>
+        <b>Part number:</b> {{ sample.part_number }}
+        <br>
+        <b>Part name:</b> {{ sample.part_name }}
+        <br>
+        <b>Drawing number:</b> {{ sample.drawing_number }}
+        <br>
+        <b>Drawing revision:</b> {{ sample.drawing_revision }}
+        <br>
+        <b>Client:</b> {{ sample.client }}
+        <br>
+        <b>Trial number:</b> {{ sample.trial_number }}
+        <br>
+        <b>Status:</b> {{ sample.status }}
+        <br>
+        <b>Approval date:</b> {{ sample.approval_date }}
+        <br>
+        <b>Storage place:</b> {{ sample.storage_place }}
+        <br>
+        <a href="{% url 'sample-update' sample.part_number %}"> Update sample </a>
+        &nbsp;
+        <a href="{% url 'sample-delete' sample.part_number %}"> Delete sample </a>
+        <hr>
+
+        <br>
+    {% endfor %}
+        <br>
+    <div class="pagination">
+        <span class="step-links">
+            {% if page_obj.has_previous %}
+                <a href="?page=1">&laquo; first</a>
+                <a href="?page={{ page_obj.previous_page_number }}" class="pagination-link"> &lsaquo; previous </a>
+            {% endif %}
+
+            <span class="current-page">
+                Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}.
+            </span>
+
+            {% if page_obj.has_next %}
+                <a href="?page={{ page_obj.next_page_number }}" class="pagination-link"> next &rsaquo; </a>
+                <a href="?page={{ page_obj.paginator.num_pages }}">last &raquo;</a>
+            {% endif %}
+        </span>
+    </div>
+</html>
+{% endblock %}

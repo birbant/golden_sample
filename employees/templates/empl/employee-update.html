@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <h3> You can update employee details here: </h3>
+</head>
+<body>
+    <hr>
+    <br>
+
+    <form method="post" autocomplete="off">
+
+        {% csrf_token %}
+
+        {{ EmployeeUpdate.as_p }}
+
+        <input type="submit" value="Update employee details"/>
+    </form>
+</body>
+</html>
+{% endblock %}

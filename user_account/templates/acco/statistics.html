@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+</head>
+<body>
+{% block content %}
+    <h3>Golden Sample Statistics:</h3>
+    <ul>
+        <li>Number of employees: {{ employees_count }}</li>
+        <li>Number of samples: {{ samples_count }}</li>
+        <li>Number of operations: {{ operations_count }}</li>
+    </ul>
+{% endblock %}
+</body>
+</html>

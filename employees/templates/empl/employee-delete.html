@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<html>
+
+    <h3> Delete employee from database </h3>
+    <hr>
+    <br>
+
+    <form method="post" autocomplete="off">
+
+        {% csrf_token %}
+        <p> Are you s u r e you want to delete employee <b>{{ first_name }} {{ last_name }}</b> from database? </p>
+
+        <br> <br>
+
+        <input type="submit" value="Delete employee from database"/>
+    </form>
+    {%  endblock %}
+
+</html>

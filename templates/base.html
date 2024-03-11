@@ -1,0 +1,135 @@
+{% load static %}
+<html {% if LANGUAGE_CODE %}
+    lang="{{ LANGUAGE_CODE }}"{% endif%}>
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Golden Sample App</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="https://bootswatch.com/5/yeti/bootstrap.min.css">
+
+    <style>
+        body {
+            background-image: url("{% static 'back.jpg' %}");
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            height: 100vh; 
+            opacity: 0.97
+        }
+        .navbar-nav {
+            display: inline-block;
+            padding: 10px 10px;
+            border-radius: 3px;
+            margin: 3px;
+            font-size: 15px;
+            font-weight: bold;
+            box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.3);
+            text-align: center
+        }
+        .navbar-nav-login{
+            display: inline-block;
+            padding: 10px 10px;
+            border-radius: 5px;
+            margin: 10px;
+            font-size: 15px;
+            font-weight: bold;
+            box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.3);
+        }
+
+        .navbar-nav-out{
+            display: inline-block;
+            padding: 10px 10px;
+            border-radius: 5px;
+            margin: 10px;
+            font-size: 15px;
+            font-weight: bold;
+            box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.3);
+        }
+
+        body.logged-in .navbar-nav-login {
+            display: none;
+        }
+        .navbar-nav .nav-link:hover {
+            color: black; /* Zmień kolor tekstu na czarny po najechaniu myszą */
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        
+        <div class="container">
+
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav">
+                    <a class="nav-item nav-link active" href="{% url 'homepage' %}">
+                        Home
+                    </a>
+                </div>
+                <div class="navbar-nav">
+                     <a class="nav-item nav-link active" href="{% url 'sample-add' %}">
+                        Sample add
+                    </a>
+                </div>
+                <div class="navbar-nav">
+                    <a class="nav-item nav-link active" href="{% url 'employee-add' %}">
+                        Employee add
+                    </a>
+                </div>
+                <div class="navbar-nav">
+                    <a class="nav-item nav-link active" href="{% url 'operations' %}">
+                        Operation add
+                    </a> 
+                </div>
+            </div>
+
+<div class="navbar-nav ml-auto">
+    <!-- Przyciski rejestracji, logowania i wylogowania -->
+    {% if user.is_authenticated %}
+        <!-- Jeśli użytkownik jest zalogowany -->
+        <div class="navbar-nav">
+            <a class="nav-item nav-link active" href="{% url 'dashboard' %}">
+                Dashboard
+            </a>
+        </div>
+        <div class="navbar-nav">
+            <a class="nav-item nav-link active" href="{% url 'user-logout' %}">
+                Logout
+            </a>
+        </div>
+    {% else %}
+        <!-- Jeśli użytkownik nie jest zalogowany -->
+        <div class="navbar-nav">
+            <a class="nav-item nav-link active" href="{% url 'register' %}">
+                Register
+            </a>
+        </div>
+        <div class="navbar-nav">
+            <a class="nav-item nav-link active" href="{% url 'my-login' %}">
+                Login
+            </a>
+        </div>
+    {% endif %}
+</div>
+
+            <div class="navbar-nav">
+                <a class="nav-item nav-link active" href="{% url 'admin:index' %}">
+                    Admin
+                </a>
+            </div>
+        </div>
+    </nav>
+    <div class="container">
+        <div class="jumbotron">
+            {% block content %}{% endblock %}
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+</body>
+</html>
+

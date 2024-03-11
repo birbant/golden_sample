@@ -1,0 +1,83 @@
+{#{% extends 'base.html' %}#}
+{##}
+{#{% block content %}#}
+{#<!DOCTYPE html>#}
+{#<html lang="en">#}
+{#<head>#}
+{#    <h3> Dashboard </h3>#}
+{#</head>#}
+{#<body>#}
+{#    <br>#}
+{#    {% if messages %}#}
+{#        <ul class="messages">#}
+{#            {% for message in messages %}#}
+{#                <p>{{ message }}</p>#}
+{#            {% endfor %}#}
+{#        </ul>#}
+{#    {% endif %}#}
+{##}
+{#    <a href="{% url 'samples' %}">List of samples</a>#}
+{#    <br><hr>#}
+{#    <a href="{% url 'employees' %}">List of employees</a>#}
+{#    <br><hr>#}
+{#    <a href="{% url 'management' %}">List of operations</a>#}
+{#    <br><hr>#}
+{#    <a href="{% url 'statistics' %}">Golden Sample statistics</a>#}
+{##}
+{#    <h3>Contact Support:</h3>#}
+{#        <ul>#}
+{#            <li>Phone: {{ support_contact.phone }}</li>#}
+{#            <li>Email: {{ support_contact.email }}</li>#}
+{#        </ul>#}
+{##}
+{#</body>#}
+{#<br>#}
+{#{% endblock %}#}
+{#</html>#}
+{% extends 'base.html' %}
+
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Dashboard</title>
+    <style>
+        /* Dodaj stylizację przycisków */
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #007bff; /* Kolor przycisku */
+            color: #fff; /* Kolor tekstu */
+            text-decoration: none;
+            border-radius: 5px;
+            margin-right: 10px; /* Margines prawy między przyciskami */
+        }
+        .btn:hover {
+            background-color: #0056b3; /* Kolor przycisku po najechaniu myszą */
+        }
+    </style>
+</head>
+<body>
+    <h3>Dashboard</h3>
+    <hr>
+    {% if messages %}
+        <ul class="messages">
+            {% for message in messages %}
+                <li>{{ message }}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+
+    <a href="{% url 'samples' %}" class="btn"><b>List of samples</b></a>
+    <a href="{% url 'employees' %}" class="btn"><b>List of employees</b></a>
+    <a href="{% url 'management' %}" class="btn"><b>List of operations</b></a>
+    <a href="{% url 'statistics' %}" class="btn"><b>Statistics</b></a>
+    <br> <hr>
+    <h3>Contact Support:</h3>
+    <ul>
+        <li>Phone: {{ support_contact.phone }}</li>
+        <li>Email: {{ support_contact.email }}</li>
+    </ul>
+</body>
+</html>
+{% endblock %}
