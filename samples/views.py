@@ -57,7 +57,6 @@ def sample_update(request, part_number):
 
         if form.is_valid():
             form.save()
-            # messages.success(request, 'Sample updated successfully!')
             return redirect('samples')
         else:
             form = SamplesAdder(instance=sample)

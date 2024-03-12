@@ -19,7 +19,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 load_dotenv()
 
-SECRET_KEY = '-----------------------------'
+SECRET_KEY = 'django-insecure-j6f&bri6pww8+^pib#l)9-*57a%qsa)!i(%j8d5hy5crkn&its'
 
 # SECRET_KEY = os.getenv("SECRET_KEY")
 
@@ -135,7 +135,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 HANDLER404 = 'my_app.views.page_404'
 
-RECAPTCHA_PUBLIC_KEY = '-------------------------------'
-RECAPTCHA_PRIVATE_KEY = '-------------------------------'
+RECAPTCHA_PUBLIC_KEY = '6Lc7_ZIpAAAAAA_9plrLLRSTtx0WrwparwK4RsmR'
+RECAPTCHA_PRIVATE_KEY = '6Lc7_ZIpAAAAAExv1BDxwZxpRelOblEsazveuWKf'
 
 LOGOUT_REDIRECT_URL = 'homepage.html'

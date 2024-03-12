@@ -58,7 +58,7 @@
     </style>
 </head>
 <body>
-    <h3>Dashboard</h3>
+<h3><b> Dashboard </b></h3>
     <hr>
     {% if messages %}
         <ul class="messages">
@@ -73,10 +73,11 @@
     <a href="{% url 'management' %}" class="btn"><b>List of operations</b></a>
     <a href="{% url 'statistics' %}" class="btn"><b>Statistics</b></a>
     <br> <hr>
-    <h3>Contact Support:</h3>
+    <h3><b> Contact Support: </b></h3>
     <ul>
-        <li>Phone: {{ support_contact.phone }}</li>
-        <li>Email: {{ support_contact.email }}</li>
+        <br>
+        <li><b>Phone:</b> {{ support_contact.phone }}</li>
+        <li><b>Email:</b> {{ support_contact.email }}</li>
     </ul>
 </body>
 </html>

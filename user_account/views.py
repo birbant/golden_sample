@@ -56,7 +56,6 @@ def dashboard(request):
     support_contact = {
         'phone': '123-456-789',
         'email': 'kuba@golden-sample-app.com',
-        'contact_form_url': '/contact/',  # Przykładowy URL do formularza kontaktowego
     }
     context = {'username': username,
                'support_contact': support_contact}

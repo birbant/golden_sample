@@ -2,14 +2,15 @@
 {% block content %}
 <!DOCTYPE html>
 <html lang="en">
-<header>
+<head>
     <h3><b> Employees </b></h3>
     <h5> All employees: {{ AllEmployees.count }} </h5>
 
-</header>
-    <hr>
+</head>
+
+<body>
+<hr>
     {% for employee in page_obj %}
-        <br>
         <b>First name:</b> {{ employee.first_name }}
         <br>
         <b>Second name:</b> {{ employee.last_name }}
@@ -18,9 +19,11 @@
         <br>
         <b>Department:</b> {{ employee.department }}
         <br>
+        <br>
         <a href="{% url 'employee-update' employee.employee_id %}"> Update employee details </a>
         &nbsp;
         <a href="{% url 'employee-delete' employee.employee_id %}"> Delete employee from database </a>
+        <br>
         <hr>
     {% endfor %}
         <br>
@@ -41,5 +44,6 @@
             {% endif %}
         </span>
     </div>
+</body>
 </html>
 {% endblock %}

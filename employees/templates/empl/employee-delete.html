@@ -2,21 +2,20 @@
 {% block content %}
 <!DOCTYPE html>
 <html lang="en">
-<html>
-
-    <h3> Delete employee from database </h3>
-    <hr>
-    <br>
+<head>
+    <h3><b> Delete employee from database </b></h3>
+</head>
 
     <form method="post" autocomplete="off">
 
         {% csrf_token %}
+        <br>
         <p> Are you s u r e you want to delete employee <b>{{ first_name }} {{ last_name }}</b> from database? </p>
 
-        <br> <br>
+        <br>
 
         <input type="submit" value="Delete employee from database"/>
     </form>
     {%  endblock %}
 
-</html>
+</head>

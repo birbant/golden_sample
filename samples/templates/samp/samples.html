@@ -1,6 +1,5 @@
 {% extends 'base.html'  %}
 {%  block content %}
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,9 +8,9 @@
     <h5> Approved samples: {{ approved }} </h5>
     <h5> Not approved samples: {{ not_approved }} </h5>
 </head>
+
 <hr>
     {% for sample in page_obj %}
-        <br>
         <b>Part number:</b> {{ sample.part_number }}
         <br>
         <b>Part name:</b> {{ sample.part_name }}
@@ -30,12 +29,12 @@
         <br>
         <b>Storage place:</b> {{ sample.storage_place }}
         <br>
-        <a href="{% url 'sample-update' sample.part_number %}"> Update sample </a>
-        &nbsp;
-        <a href="{% url 'sample-delete' sample.part_number %}"> Delete sample </a>
-        <hr>
-
         <br>
+        <a href="{% url 'sample-update' sample.part_number %}"> Update sample details </a>
+        &nbsp;
+        <a href="{% url 'sample-delete' sample.part_number %}"> Delete sample from database </a>
+        <br>
+        <hr>
     {% endfor %}
         <br>
     <div class="pagination">

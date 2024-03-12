@@ -3,23 +3,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <h3>Add an operation here:</h3>
+    <h3><b> Add an operation here: </b></h3>
 </head>
-     <style>
-        /* Dodaj stylizację przycisków */
-        .btn {
-            display: inline-block;
-            padding: 10px 20px;
-            background-color: #007bff; /* Kolor przycisku */
-            color: #fff; /* Kolor tekstu */
-            text-decoration: none;
-            border-radius: 5px;
-            margin-right: 10px; /* Margines prawy między przyciskami */
-        }
-        .btn:hover {
-            background-color: #0056b3; /* Kolor przycisku po najechaniu myszą */
-        }
-    </style>
+
 <body>
    <br>
         <form method="post" autocomplete="off">
@@ -28,7 +14,7 @@
 
         {{ SampleOperationAdder.as_p }}
 
-        <a href="{% url 'management' %}" class="btn"><b>Add an operation</b></a>
+        <input type="submit" value="Add an operation">
 
         </form>
    <br>

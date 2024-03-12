@@ -58,10 +58,19 @@ Steps required to install and run the project locally.
 The application is designed to facilitate the management of user golden samples. 
 Its features include:
 
-Adding, editing, and deleting user profiles.
-Adding, editing, and deleting samples.
-Adding and editing sample operations as collecting for production and other purposes as well as return.
-User panel functionality, including registration, login, and logout.
+- [Adding](/static/read-me-photos/emp%20add.png),
+[editing](/static/read-me-photos/emp%20edd.png) and 
+[deleting](/static/read-me-photos/emp%20del.png) employees from [database](/static/read-me-photos/emplo.png).
+
+- [Adding](/static/read-me-photos/sam%20add.png),
+[editing](/static/read-me-photos/sam%20upd.png) and 
+[deleting](/static/read-me-photos/sam%20del.png) samples from [database](/static/read-me-photos/samp.png).
+
+- Sample [operations](/static/read-me-photos/ope.png): [collecting](/static/read-me-photos/sam%20add.png) 
+(for production and for other purposes) and return with storage tracking. 
+- User [panel](/static/read-me-photos/dashboard.png) and other functionalities including: [registration](/static/read-me-photos/register.png) with 
+secure captcha tests, [login](/static/read-me-photos/login.png), [logout](/static/read-me-photos/logout.png), 
+[statistics](/static/read-me-photos/stat.png) and customized error [404](/static/read-me-photos/404.png) messages.
 
 ## Contributions
 Any additional contribution to the project, such as reporting bugs, 
