@@ -12,7 +12,7 @@ def homepage(request):
 def samples(request):
 
     queryDataAll = Samples.objects.all()
-    paginator = Paginator(queryDataAll, 5)  # 5 próbek na stronę
+    paginator = Paginator(queryDataAll, 5)
 
     page_number = request.GET.get('page')
     page_obj = paginator.get_page(page_number)

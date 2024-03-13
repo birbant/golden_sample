@@ -2,10 +2,12 @@
 {% block content %}
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <h3><b> Delete employee from database </b></h3>
 </head>
 
+<body>
     <form method="post" autocomplete="off">
 
         {% csrf_token %}
@@ -16,6 +18,6 @@
 
         <input type="submit" value="Delete employee from database"/>
     </form>
-    {%  endblock %}
-
-</head>
+</body>
+</html>
+{% endblock %}

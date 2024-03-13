@@ -22,7 +22,7 @@ def register(request):
     return render(request, 'acco/register.html', context)
 
 
-def my_login(request, username=None):
+def my_login(request):
     form = LoginForm()
 
     if request.method == 'POST':
@@ -46,7 +46,7 @@ def my_login(request, username=None):
 def user_logout(request):
     logout(request)
     messages.info(request, "You have been successfully logged out. Thank you for using Golden Sample application.")
-    return render(request,'acco/user-logout.html')
+    return render(request, 'acco/user-logout.html')
 
 
 @login_required

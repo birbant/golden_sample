@@ -7,11 +7,11 @@ class Employees(models.Model):
     last_name = models.CharField(max_length=100)
     employee_id = models.IntegerField(validators=[MinValueValidator(10000), MaxValueValidator(99999)], unique=True)
     STATUS_CHOICES = [
-        ('quality', 'Quality'),
-        ('projects', 'Projects'),
-        ('tool-house', 'Tool-house'),
-        ('technical', 'Technical'),
-        ('other', 'Other'),
+        ('quality', 'quality'),
+        ('projects', 'projects'),
+        ('tool-house', 'tool-house'),
+        ('technical', 'technical'),
+        ('other', 'other'),
     ]
     department = models.CharField(max_length=20, choices=STATUS_CHOICES)
 
