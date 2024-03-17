@@ -20,6 +20,15 @@ pip  list
 Check: [tutorial venv](https://docs.python.org/3/tutorial/venv.html)
 as well as: [djangoproject](https://www.djangoproject.com/) 
 
+## Technologies used for making Golden Sample App:
+
+- Python
+- Django
+- HTML
+- CSS
+- Bootstrap
+- reCAPTCHA 
+
 ## Installation
 
 Steps required to install and run the project locally.
@@ -53,7 +62,12 @@ Steps required to install and run the project locally.
     ```bash
     python manage.py runserver
     ```
-
+   
+6. Run golden sample app 
+   ```bash
+   # Access from browser or use curl
+   curl 127.0.0.1:8000/
+    ```
 ## Usage
 The application is designed to facilitate the management of user golden samples. 
 Its features include:
@@ -73,5 +87,8 @@ secure captcha tests, [login](/static/read-me-photos/login.png), [logout](/stati
 [statistics](/static/read-me-photos/stat.png) and customized error [404](/static/read-me-photos/404.png) messages.
 
 ## Contributions
-Any additional contribution to the project, such as reporting bugs, 
-proposing new features, etc. is more than very welcome. Please contact me regarding your observations, suggestions and comments.
+Any additional contribution to the project, such as reporting bugs, proposing new features, etc. is more 
+than very welcome. Please contact me regarding your observations, suggestions and comments.
+- - - - - - 
+Current version of Golden Sample needs to be treated as base - let's call it v1 - in development of this 
+particular concept with rather quite large room for improvement. 
